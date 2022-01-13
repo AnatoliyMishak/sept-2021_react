@@ -1,6 +1,5 @@
 import './App.css';
 
-
 const App = () => {
     return (
         <div className={'item'}>
@@ -15,14 +14,15 @@ const App = () => {
 
             <Notebook/>
 
-            <div>
-                <h1>Brand: HP</h1>
-                <h2>Model: 15S</h2>
-                <h2>Cost: 1000</h2>
-                <img
-                    src={'https://www.notebookcheck-ru.com/fileadmin/Notebooks/HP/15s-fq1556ng/HP_15s_fq_teaser.png'}
-                    alt={'HP'}/>
-            </div>
+
+            {/*<div>*/}
+            {/*    <h1>Brand: HP</h1>*/}
+            {/*    <h2>Model: 15S</h2>*/}
+            {/*    <h2>Cost: 1000</h2>*/}
+            {/*    <img*/}
+            {/*        src={'https://www.notebookcheck-ru.com/fileadmin/Notebooks/HP/15s-fq1556ng/HP_15s_fq_teaser.png'}*/}
+            {/*        alt={'HP'}/>*/}
+            {/*</div>*/}
 
         </div>
     );
