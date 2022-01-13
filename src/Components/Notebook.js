@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Notebook = () => {
+const Notebook = (props) => {
+    console.log(props);
     return (
         <div>
                 <h1>Brand: Apple</h1>
