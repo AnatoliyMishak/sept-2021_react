@@ -1,25 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <h1>Brand: Apple</h1>
+        <h2>Model: Pro</h2>
+        <h2>Cost: 100</h2>
+          <img src={'https://www.apple.com/v/macbook-pro-14-and-16/a/images/meta/macbook-pro-14-and-16_overview__fz0lron5xyuu_og.png?202111300609'} alt={'Apple'}"/>
+      </div>
   );
-}
+};
 
 export default App;
