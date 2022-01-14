@@ -1,0 +1,14 @@
+.target{
+    border: 2px solid black;
+    width: 50%;
+    text-align: center;
+}
+.posts{
+    display: flex;
+}
+.comments{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
