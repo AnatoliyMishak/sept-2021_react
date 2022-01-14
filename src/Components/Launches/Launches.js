@@ -17,7 +17,7 @@ const Launches = () => {
             {launches.map(value => <Launch key={value.flight_number}
                                            mission_name={value.mission_name}
                                            launch_year={value.launch_year}
-            img src={value.links.mission_patch_small} alt="mission_patch"/>)}
+            img={value.links.mission_patch_small} alt="mission_patch"/>)}
         </div>
     );
 };
