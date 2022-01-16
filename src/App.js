@@ -105,30 +105,74 @@ import './App.css';
 //
 // export default App;
 
+// import React from 'react';
+//
+// import {useState} from 'react'
+// import {createRef} from 'react'
+//
+// const App = () => {
+//
+//     const name = createRef()
+//     const age = createRef()
+//
+//     const send = (e) =>{
+//         e.preventDefault()
+//         // console.log(name);
+//         console.log(name.current.value);
+//         console.log(age.current.value);
+//     }
+//
+//     return (
+//         <div>
+//             <form onSubmit={send}>
+//                 <div><label>Name: <input type="text" name={'name'} ref={name}/></label></div>
+//                 <div><label>Age: <input type="number" name={'age'} ref={age}/></label></div>
+//                 <button>Send</button>
+//             </form>
+//         </div>
+//     );
+// };
+//
+// export default App;
+
 import React from 'react';
 
-import {useState} from 'react'
-import {createRef} from 'react'
+import {useState, useEffect} from 'react'
+import {userService} from './Services/User.service'
+import User from './Components/User'
 
 const App = () => {
 
-    const name = createRef()
-    const age = createRef()
+    let [users, setUsers] = useState([]);
+    let [userId, setUserId] = useState(0);
+    let [user, setUser] = useState(null);
+
+    useEffect(()=>{
+        userService.getAll()
+            .then(value => setUsers(value))
+    }, [])
 
     const send = (e) =>{
         e.preventDefault()
-        // console.log(name);
-        console.log(name.current.value);
-        console.log(age.current.value);
-    }
+        userService.getById(userId)
+            .then(value => setUser(value))
+        }
 
+    const formHandler =(e)=>{
+        e.preventDefault()
+        const id = e.target.value;
+        setUserId(id)
+
+    }
     return (
         <div>
             <form onSubmit={send}>
-                <div><label>Name: <input type="text" name={'name'} ref={name}/></label></div>
-                <div><label>Age: <input type="number" name={'age'} ref={age}/></label></div>
+                <select name={'userId'} value={userId} onChange={formHandler}>
+                    {users.map(value => <option key={value.id} value={value.id}>{value.id})  {value.name}</option>)}
+                </select>
                 <button>Send</button>
             </form>
+            {user && <User user={user}/>}
         </div>
     );
 };
