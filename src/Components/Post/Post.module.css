@@ -1,0 +1,9 @@
+.wrap{
+    border: 2px solid black;
+    box-sizing: border-box;
+    background: cornsilk;
+}
+.id{
+    text-align: center;
+    font-size: 20px;
+}

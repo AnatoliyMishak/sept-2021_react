@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Post = () => {
+import css from './Post.module.css'
+
+const Post = ({post:{id, title, body}}) => {
     return (
-        <div>
-            
+        <div className={css.wrap}>
+            <div className={css.id}>Id: {id}</div>
+            <div>Title: {title}</div>
+            <div>Body: {body}</div>
         </div>
     );
 };
