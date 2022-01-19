@@ -1,6 +1,5 @@
 import React from 'react';
 
-import css from './User.module.css'
 
 const User = ({user}) => {
     const {id, name, username, email} = user;

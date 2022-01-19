@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
-import Form from "./Components/Form/Form";
-import Users from "./Components/Users/Users";
-import {userService} from "./Services/User.service";
+import Form from './Components/Form/Form';
+import Users from './Components/Users/Users';
+import {userService} from './Services/User.service';
 
 const App = () => {
-    let [users, setUsers] = useState([]);
-    let [filtUsers, setFiltUsers] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [filtUsers, setFiltUsers] = useState([]);
 
     useEffect(() => {
         userService.getAll().then(value => {
