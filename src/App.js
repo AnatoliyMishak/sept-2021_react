@@ -7,6 +7,7 @@ import PostsPage from "./Pages/PostsPage/PostsPage";
 import AboutPage from "./Pages/AboutPage/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import Layout from "./Components/Layout/Layout";
+import SinglePostPage from "./Pages/SinglePostPage/SinglePostPage";
 
 function App() {
     return (
@@ -15,10 +16,11 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
 
-                    <Route path={'/'} element={<HomePage/>}/>
-                    <Route path={'/users'} element={<UsersPage/>}/>
-                    <Route path={'/posts'} element={<PostsPage/>}/>
-                    <Route path={'/about'} element={<AboutPage/>}/>
+                    <Route index element={<HomePage/>}/>
+                    <Route path={'users'} element={<UsersPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}/>
+                    <Route path={'posts/:id'} element={<SinglePostPage/>}/>
+                    <Route path={'about'} element={<AboutPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
 
                 </Route>
