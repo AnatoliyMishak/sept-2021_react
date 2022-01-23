@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserDetails = ({user}) => {
+const UserDetails = ({user, getUserId}) => {
     const {id, name, username, email} = user;
 
     return (
@@ -9,7 +9,7 @@ const UserDetails = ({user}) => {
             <div>{name}</div>
             <div>{username}</div>
             <div>{email}</div>
-            <button>Posts</button>
+            <button onClick={()=> getUserId(id)}>Posts</button>
         </div>
     );
 };
