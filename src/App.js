@@ -1,6 +1,6 @@
 import css from './App.module.css'
 
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route, Link, Navigate} from 'react-router-dom'
 import HomePage from "./Pages/HomePage/HomePage";
 import UsersPage from "./Pages/UsersPage/UsersPage";
 import PostsPage from "./Pages/PostsPage/PostsPage";
@@ -18,9 +18,11 @@ function App() {
 
                     <Route index element={<HomePage/>}/>
                     <Route path={'users'} element={<UsersPage/>}/>
-                    <Route path={'posts'} element={<PostsPage/>}/>
-                    <Route path={'posts/:id'} element={<SinglePostPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}>
+                        <Route path={':id'} element={<SinglePostPage/>}/>
+                    </Route>
                     <Route path={'about'} element={<AboutPage/>}/>
+                    <Route path={'about-us'} element={<Navigate to={'/about'}/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
 
                 </Route>

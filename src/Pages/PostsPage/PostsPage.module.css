@@ -1,0 +1,8 @@
+.target{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.post, .outlet{
+    width: 50%;
+}
