@@ -2,7 +2,7 @@ import React from 'react';
 
 import css from './User.module.css'
 
-const User = ({user}) => {
+const User = ({user, getUser}) => {
     const {id, name} = user;
 
     return (
@@ -10,7 +10,7 @@ const User = ({user}) => {
             <div>
                 {id}_{name}
             </div>
-            <button>User Details</button>
+            <button onClick={() => getUser(user)}>User Details</button>
         </div>
     );
 };
