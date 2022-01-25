@@ -13,10 +13,11 @@ const UserDetailsPage = () => {
     return (
         <div>
             {user && (
-                <div>{user.id} {user.name}</div>
-                // <div>{user.name}</div>
-                // <div>{user.username}</div>
-                // <div>{user.email}</div>
+                <div>{user.id}
+                    {user.name}
+                    {user.username}</div>
+                // <div>{JSON.stringify(user)}</div>
+                // JSON.stringify(user)
             )}
         </div>
     );
