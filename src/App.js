@@ -8,6 +8,10 @@ import AboutPage from "./Pages/AboutPage/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import Layout from "./Components/Layout/Layout";
 import SinglePostPage from "./Pages/SinglePostPage/SinglePostPage";
+import UserDetailsPage from "./Pages/UserDetailsPage/UserDetailsPage";
+import UserPostsPage from "./Pages/UserPostsPage/UserPostsPage";
+import PostDetailsPage from "./Pages/PostDetailsPage/PostDetailsPage";
+import PostCommentsPage from "./Pages/PostCommentsPage/PostCommentsPage";
 
 function App() {
     return (
@@ -16,18 +20,22 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
 
-                    <Route index element={<HomePage/>}/>
-                    <Route path={'users'} element={<UsersPage/>}/>
-                    <Route path={'posts'} element={<PostsPage/>}/>
-                    <Route path={'posts/:id'} element={<SinglePostPage/>}/>
-                    <Route path={'about'} element={<AboutPage/>}/>
-                    <Route path={'*'} element={<NotFoundPage/>}/>
-
+                    <Route path={'users'} element={<UsersPage/>}>
+                        <Route path={':id'} element={<UserDetailsPage/>}>
+                            <Route path={'posts'} element={<UserPostsPage/>}/>
+                        </Route>
+                    </Route>
+                    <Route path={'posts'} element={<PostsPage/>}>
+                        <Route path={':id'} element={<PostDetailsPage/>}>
+                            <Route path={'comments'} element={<PostCommentsPage/>}/>
+                        </Route>
+                    </Route>
                 </Route>
+
             </Routes>
         </div>
-    )
-        ;
+)
+;
 }
 
 export default App;
