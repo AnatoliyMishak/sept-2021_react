@@ -1,13 +1,9 @@
 import css from './App.module.css'
 
 import {Routes, Route, Link} from 'react-router-dom'
-import HomePage from "./Pages/HomePage/HomePage";
 import UsersPage from "./Pages/UsersPage/UsersPage";
 import PostsPage from "./Pages/PostsPage/PostsPage";
-import AboutPage from "./Pages/AboutPage/AboutPage";
-import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import Layout from "./Components/Layout/Layout";
-import SinglePostPage from "./Pages/SinglePostPage/SinglePostPage";
 import UserDetailsPage from "./Pages/UserDetailsPage/UserDetailsPage";
 import UserPostsPage from "./Pages/UserPostsPage/UserPostsPage";
 import PostDetailsPage from "./Pages/PostDetailsPage/PostDetailsPage";
