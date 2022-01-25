@@ -9,10 +9,11 @@ const UserDetailsPage = () => {
     useEffect(()=>{
         userService.getById(id).then(value => setUser({...value}))
     },[])
+
     return (
         <div>
             {user && (
-                <div>{user.id}</div>
+                <div>{user.id} {user.name}</div>
                 // <div>{user.name}</div>
                 // <div>{user.username}</div>
                 // <div>{user.email}</div>
