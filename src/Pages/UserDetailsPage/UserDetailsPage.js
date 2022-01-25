@@ -13,8 +13,9 @@ const UserDetailsPage = () => {
     return (
         <div>
             {user && (
-                <div>{user.id} {user.name} {user.username}</div>
+                <div>{user.id}_{user.name} username:{user.username}</div>
             )}
+            <button>Posts</button>
         </div>
     );
 };
