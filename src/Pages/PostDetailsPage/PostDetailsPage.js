@@ -10,17 +10,13 @@ const PostDetailsPage = () => {
     useEffect(()=>{
         postService.getById(id).then(value => setPost({...value}))
     },[id])
-    
-    const postComment = () => {
-      
-    }
 
     return (
         <div>
             {post && (
                 <div>{post.body}</div>
             )}
-            <button onClick={()=> {postComment}}>Comments</button>
+            <button>Comments</button>
             <Outlet/>
         </div>
     );

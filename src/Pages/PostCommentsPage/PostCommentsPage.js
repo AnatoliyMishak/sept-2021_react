@@ -12,7 +12,7 @@ const PostCommentsPage = () => {
 
     return (
         <div>
-            {comments.map(comment=> <PostCommentsPage key={comments.id} comments={comments}/>)}
+            {comments.map(comment=> <PostCommentsPage key={comments.id}/>)}
         </div>
     );
 };
