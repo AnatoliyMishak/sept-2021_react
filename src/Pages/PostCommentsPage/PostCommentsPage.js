@@ -3,12 +3,13 @@ import {useParams} from "react-router-dom";
 import {postService} from "../../Services/Post.service";
 
 const PostCommentsPage = () => {
+
     const {id} = useParams();
     const [comments, setComments] = useState([]);
 
     useEffect(()=>{
-        postService.getByComments(id).then(value => setComments([...value]))
-    },[id])
+      postService.getByComments(id).then(value => setComments([...value]))
+            },[id])
 
     return (
         <div>
