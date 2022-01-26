@@ -8,12 +8,24 @@ const UserDetailsPage = () => {
 
     useEffect(() => {
         userService.getById(id).then(value => setUser({...value}))
-    }, [])
+    }, [id])
 
     return (
         <div>
             {user && (
-                <div>{user.id}_{user.name} username:{user.username}</div>
+                <div>
+                    <div>{user.id}_{user.name}</div>
+                    <div>Nick: {user.username}</div>
+                    <div>E-mail: {user.email}</div>
+                    <div>Address:
+                        <li>street: {user.address.street}</li>
+                        <li>suit: {user.address.suite}</li>
+                        <li>city: {user.address.city}</li>
+                        <li>zip-code: {user.address.zipcode}</li>
+                    </div>
+                    <div>Phone N: {user.phone}</div>
+                    <div>Web: {user.website}</div>
+                </div>
             )}
             <button>Posts</button>
         </div>
