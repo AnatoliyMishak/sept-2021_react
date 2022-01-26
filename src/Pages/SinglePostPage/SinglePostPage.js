@@ -15,7 +15,7 @@ const SinglePostPage = () => {
         }
 
         postService.getById(id).then(value => setPost({...value}))
-    }, [])
+    }, [id])
 
     const toHome = () => {
         navigate('/')
