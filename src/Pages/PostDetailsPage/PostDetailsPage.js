@@ -20,7 +20,7 @@ const PostDetailsPage = () => {
             {post && (
                 <div>{post.body}</div>
             )}
-            <button onClick={}>Comments</button>
+            <button onClick={()=> {postComment}}>Comments</button>
             <Outlet/>
         </div>
     );
