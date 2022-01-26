@@ -16,7 +16,7 @@ const PostDetailsPage = () => {
             {post && (
                 <div>{post.body}</div>
             )}
-            <button onClick={}>Comments</button>
+            {/*<button onClick={}>Comments</button>*/}
             <Outlet/>
         </div>
     );
