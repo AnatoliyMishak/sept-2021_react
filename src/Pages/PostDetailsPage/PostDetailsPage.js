@@ -6,17 +6,23 @@ const PostDetailsPage = () => {
     const {id} = useParams();
 
     const [post, setPost] = useState(null);
+    const [comments, setComments] = useState([]);
 
     useEffect(()=>{
         postService.getById(id).then(value => setPost({...value}))
     },[id])
+
+    const getCommentsId = (id) => {
+      postService.getByComments(id).then(value => setComments([...value]))
+        setComments(comments)
+    }
 
     return (
         <div>
             {post && (
                 <div>{post.body}</div>
             )}
-            <button>Comments</button>
+            <button onClick={()=>getCommentsId(id)}>Comments</button>
             <Outlet/>
         </div>
     );
