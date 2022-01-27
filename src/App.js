@@ -2,7 +2,9 @@
 import {useReducer} from "react";
 
 const reducer = (state, action) => {
+
 switch (action.type) {
+
     case 'inc':
         return {...state, count1: state.count1 + 1}
     case 'dec':
